@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Data Visualization App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Data Visualization App</h1>
+    </header>
+    <main>
+        <div class="left-column">
+            <section id="visualization">
+                <h2>Visualize Data</h2>
+                <div class="controls">
+                    <select id="xAxis"></select>
+                    <select id="yAxis"></select>
+                    <select id="chartType">
+                        <option value="scatter">Scatter Plot</option>
+                        <option value="bar">Bar Chart</option>
+                        <option value="line">Line Chart</option>
+                    </select>
+                    <button id="visualizeBtn">Visualize</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+            </section>
+        </div>
+        
+        <div class="right-column">
+            <section id="fileUpload">
+                <h2>Upload Data</h2>
+                <input type="file" id="csvFile" accept=".csv">
+            </section>
+        
+        <section id="dataPreview">
+            <h2>Data Preview</h2>
+            <div class="preview-content">
+                <table id="previewTable">
+                    <thead>
+                        <tr id="tableHeader"></tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <p id="rowCount"></p>
+        </section>
+        
+        <section id="filterSection">
+            <h2>Filter Data</h2>
+            <div class="controls">
+                <select id="filterColumn"></select>
+                <div id="filterRange"></div>
+                <button id="applyFilterBtn">Apply Filter</button>
+                <button id="resetFilterBtn">Reset Filter</button>
+            </div>
+        </section>
+        
+        <section id="transformSection">
+            <h2>Transform Data</h2>
+            <div class="controls">
+                <select id="transformColumn"></select>
+                <select id="transformOperation">
+                    <option value="add">Add</option>
+                    <option value="subtract">Subtract</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="divide">Divide</option>
+                </select>
+                <input type="number" id="transformValue" step="any">
+                <button id="applyTransformBtn">Apply Transform</button>
+                <button id="undoTransformBtn">Undo Transform</button>
+            </div>
+        </section>
+        
+        <section id="exportSection">
+            <h2>Export Data</h2>
+            <button id="exportBtn">Export to CSV</button>
+        </section>
+        
+        <section id="statsSection">
+            <h2>Basic Statistics</h2>
+            <div class="controls">
+                <select id="statsColumn"></select>
+            </div>
+            <div id="statsResult"></div>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Data Visualization App</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
